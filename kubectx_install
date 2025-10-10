@@ -1,9 +1,9 @@
-mkdir ~/kubectx
-git clone https://github.com/ahmetb/kubectx.git ~/kubectx
+mkdir /opt/kubectx
+git clone https://github.com/ahmetb/kubectx.git /opt/kubectx
 COMPDIR=$(pkg-config --variable=completionsdir bash-completion)
-ln -sf ~/kubectx/completion/kubens.bash $COMPDIR/kubens
-ln -sf ~/kubectx/completion/kubectx.bash $COMPDIR/kubectx
-cat << EOF >> ~/.bashrc
+ln -sf /opt/kubectx/completion/kubens.bash $COMPDIR/kubens
+ln -sf /opt/kubectx/completion/kubectx.bash $COMPDIR/kubectx
+cat << EOF >> /home/nutanix/.bashrc
 #kubectx and kubens
-export PATH=~/.kubectx:\$PATH
+export PATH=/opt/kubectx:\$PATH
 EOF
